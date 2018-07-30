@@ -15,4 +15,5 @@ class Solution:
                 del nums[indx]
         
         return len(nums)
+     
         
