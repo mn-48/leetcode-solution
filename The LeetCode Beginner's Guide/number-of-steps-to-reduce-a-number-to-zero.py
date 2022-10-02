@@ -8,6 +8,7 @@ class Solution:
             if num&1:
                 num -=1
             else:
+                # num = num >> 1
                 num = num //2
             cnt+=1
         return cnt
