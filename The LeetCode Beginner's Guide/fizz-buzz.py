@@ -1,3 +1,6 @@
+# Time complexity O(n)
+# Space Complexity O(1)
+
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:
         ls = []
