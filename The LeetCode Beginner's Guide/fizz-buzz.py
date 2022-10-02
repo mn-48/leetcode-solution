@@ -1,16 +1,18 @@
-
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:
         ls = []
         for i in range(1,n+1):
-            res = str(i)
-            if i%3==0 and i%5!=0:
+            divided_by3 = i%3 == 0
+            divided_by5 = i%5 == 0
+            
+            if divided_by3 and divided_by5 :
+                 res = "FizzBuzz"
+            elif divided_by3:
                 res = "Fizz"
-            if i%3!=0 and i%5==0:
+            elif divided_by5:
                 res = "Buzz"
-            if i%3==0 and i%5==0:
-                res = "FizzBuzz"
+            else:
+                res = str(i)
             ls.append(res)
         return ls
-            
             
