@@ -10,3 +10,6 @@ class Solution:
             if i not in nums_dic:
                 res.append(i)
         return res
+    
+# Time complexity O(n)
+# Space complexity O(n)
