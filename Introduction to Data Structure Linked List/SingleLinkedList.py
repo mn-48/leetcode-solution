@@ -1,3 +1,5 @@
+
+
 # Create Node
 class Node(object):
     def __init__(self, val):
@@ -10,7 +12,7 @@ class MyLinkedList:
         self.head = None # head always indicates the linkedlist starting point
         self.size = 0    
         
-    def get(self, index):
+    def get(self, index: int) -> int:
         """
         Get the value of the index-th node in the linked list. 
         If index is invalid return -1
@@ -33,7 +35,7 @@ class MyLinkedList:
             i+=1
         return curr.val
     
-    def addAtHead(self, val):
+    def addAtHead(self, val: int) -> None:
         """
         Add a node of value val before the first element of the LinkedList.
         After the insertion, new node will be the first node of the LinkedList.
@@ -49,18 +51,20 @@ class MyLinkedList:
         # print("head", self.head.val)
 
     # See the whole linked list   
-    def print(self): 
-        curr = self.head
-        if curr is None:
-            print("Empty LinkedList!")
+
+    # def print(self): 
+    #     curr = self.head
+    #     if curr is None:
+    #         print("Empty LinkedList!")
             
-        myll_srt = ""
-        while curr:
-            myll_srt += str(curr.val) + "-->"
-            curr = curr.next
-        print(myll_srt)
+    #     myll_srt = ""
+    #     while curr:
+    #         myll_srt += str(curr.val) + "-->"
+    #         curr = curr.next
+    #     print(myll_srt)
+    
         
-    def addAtTail(self, val):
+    def addAtTail(self, val: int) -> None:
         """
         append a node of vale val to the last element of the linkedlist.
         :type val: int
@@ -81,7 +85,7 @@ class MyLinkedList:
         
         
     
-    def addAtIndex(self, index, val):
+    def addAtIndex(self, index: int, val: int) -> None:
         """
         Add a node of val before the index-th node in the linkedlist
         If index equals to the length of linked list, the node will be appended to the end of the linked list.
@@ -110,7 +114,7 @@ class MyLinkedList:
             self.size += 1
             
         
-    def deleteAtIndex(self, index):
+    def deleteAtIndex(self, index: int) -> None:
         """
         Delete the index-th node in the linked list, if index is valid.
         :type index: int
@@ -135,27 +139,31 @@ class MyLinkedList:
         self.size -= 1
         
 
-if __name__=="__main__":
-    myll = MyLinkedList()
-    myll.addAtHead(1)
-    myll.addAtHead(2)
-    myll.addAtHead(5)
-    print(myll.get(0))
-    myll.print()
-    # 5-->2-->1-->
-    myll.addAtTail(15)
-    myll.addAtTail(20)
-    myll.print()
-    # 5-->2-->1-->15-->20-->
-    myll.addAtIndex(3,23)
-    myll.print()
-    # 5-->2-->1-->23-->15-->20-->
-    myll.deleteAtIndex(2)
-    myll.print()
-    # 5-->2-->23-->15-->20-->
-
-    
-    
-    
-    
+# if __name__=="__main__":
+#     myll = MyLinkedList()
+#     myll.addAtHead(1)
+#     myll.addAtHead(2)
+#     myll.addAtHead(5)
+#     print(myll.get(0))
+#     myll.print()
+#     # 5-->2-->1-->
+#     myll.addAtTail(15)
+#     myll.addAtTail(20)
+#     myll.print()
+#     # 5-->2-->1-->15-->20-->
+#     myll.addAtIndex(3,23)
+#     myll.print()
+#     # 5-->2-->1-->23-->15-->20-->
+#     myll.deleteAtIndex(2)
+#     myll.print()
+#     # 5-->2-->23-->15-->20-->
         
+
+
+#     # Your MyLinkedList object will be instantiated and called as such:
+#     # obj = MyLinkedList()
+#     # param_1 = obj.get(index)
+#     # obj.addAtHead(val)
+#     # obj.addAtTail(val)
+#     # obj.addAtIndex(index,val)
+#     # obj.deleteAtIndex(index)
