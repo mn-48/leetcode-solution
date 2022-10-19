@@ -9,7 +9,7 @@ class Solution:
             return True
 
         first_half_end = self.end_of_first_half(head)
-        second_half_start = self.reverse_linked_list(first_half_end.next)
+        second_half_start = self.reverse_linked_list(first_half_end.next) # It is important
 
         result = True
         first_position = head
