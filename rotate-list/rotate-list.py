@@ -30,3 +30,7 @@ class Solution:
         middle.next = None
 
         return new_head
+    
+    
+# Time complexity O(n)
+# Space complexity O(1)
