@@ -24,5 +24,5 @@ class Solution:
                 
         return result
         
-        
-        
+# Time complexity O(M.N)
+# Space complexity O(min(M.N))
