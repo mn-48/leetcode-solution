@@ -1,28 +1,35 @@
 class Solution:
-    def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
-        if not mat or not mat[0]:
+    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
+        # check for empty matrix
+        if not matrix or not matrix[0]:
             return []
         
-        N, M = len(mat), len(mat[0])
+        # N=Row, M = Column
+        N, M = len(matrix), len(matrix[0])
         
-        result, intermediate = [], []
+        row, column = 0, 0
         
-        for d in range(M+N-1):
-            intermediate.clear()
-            r ,c = 0 if d<M else d-M+1, d if d<M else M-1
+        result = []
+        
+        direction = 1  # Goto up
+        while row<N and column <M:
+            result.append(matrix[row][column])
             
-            while r<N and c>-1:
-                intermediate.append(mat[r][c])
-                r+=1
-                c-=1
-            if d%2==0:
-                result.extend(intermediate[::-1])
+            # dirention 1 hole uporer dike uthbe ba column value barbe
+            new_row = row + (-1 if direction==1 else 1) 
+            new_column = column + (1 if direction==1 else -1)
+            
+            if new_row < 0 or new_row == N or new_column < 0 or new_column == M:
+                if direction:
+                    row += (column==M-1)
+                    column += (column<M-1)
+                else:
+                    column += (row==N-1)
+                    row += (row<N-1)
                 
+                direction = 1 - direction
             else:
-                result.extend(intermediate)
-                
-                
+                row = new_row
+                column = new_column
+            
         return result
-        
-# Time complexity O(M.N)
-# Space complexity O(min(M.N))
